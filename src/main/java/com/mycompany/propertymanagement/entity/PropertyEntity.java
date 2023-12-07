@@ -22,4 +22,7 @@ public class PropertyEntity {
     private String ownerEmail;
     private Double price;
     private String address;
+    @ManyToOne//(fetch = FetchType.LAZY)//it will not fetch the user data while fetching property
+    @JoinColumn(name = "USER-ID", nullable = false) //FOREIGN KEY
+    private UserEntity userEntity;
 }
